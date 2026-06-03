@@ -1,6 +1,6 @@
 // Countdown Timer
 function updateCountdown() {
-    const eventDate = new Date('2026-06-04T14:00:00');
+    const eventDate = new Date('2026-06-03T17:00:00');
     const now = new Date();
     const diff = eventDate - now;
     
@@ -55,12 +55,13 @@ dayButtons.forEach(button => {
 // Auto-select current day if within event dates
 function selectCurrentDay() {
     const today = new Date();
-    const eventStart = new Date('2026-06-04');
+    const eventStart = new Date('2026-06-03');
     const eventEnd = new Date('2026-06-07');
     
     if (today >= eventStart && today <= eventEnd) {
         const dayOfWeek = today.getDay();
         const dayMap = {
+            3: 'wednesday', // środa
             4: 'thursday',  // czwartek
             5: 'friday',    // piątek
             6: 'saturday',  // sobota
