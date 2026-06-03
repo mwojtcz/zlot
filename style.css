@@ -538,11 +538,17 @@ footer {
 }
 
 /* ADD TO CALENDAR BUTTON */
+.cal-btn-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 14px;
+}
+
 .cal-btn {
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    margin-top: 14px;
     padding: 8px 14px;
     background: transparent;
     border: 1.5px solid var(--primary);
@@ -557,6 +563,16 @@ footer {
 
 .cal-btn:hover {
     background: var(--primary);
+    color: #fff;
+}
+
+.cal-btn-apple {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+.cal-btn-apple:hover {
+    background: var(--accent);
     color: #fff;
 }
 

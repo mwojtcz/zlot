@@ -142,6 +142,59 @@ function parseCalTimes(rawTime, dateStr) {
     return null;
 }
 
+function toCalendarStamp(dateTime) {
+    return dateTime.replace(/[-:]/g, '');
+}
+
+function toIcsDateTime(dateTime) {
+    return dateTime.replace(/[-:]/g, '').replace('.000', '');
+}
+
+function formatIcsUtcStamp(date = new Date()) {
+    return date.toISOString().replace(/[-:]/g, '').replace(/\.\d{3}Z$/, 'Z');
+}
+
+function escapeIcsText(value) {
+    return String(value)
+        .replace(/\\/g, '\\\\')
+        .replace(/\r?\n/g, '\\n')
+        .replace(/,/g, '\\,')
+        .replace(/;/g, '\\;');
+}
+
+function buildIcsEvent({ title, location, description, startDateTime, endDateTime }) {
+    const uid = `${Date.now()}-${Math.random().toString(36).slice(2)}@zlotdurango`;
+    return [
+        'BEGIN:VCALENDAR',
+        'VERSION:2.0',
+        'PRODID:-//ZLOT DURANGO 2026//PL',
+        'CALSCALE:GREGORIAN',
+        'METHOD:PUBLISH',
+        'BEGIN:VEVENT',
+        `UID:${uid}`,
+        `DTSTAMP:${formatIcsUtcStamp()}`,
+        `DTSTART:${toIcsDateTime(startDateTime)}`,
+        `DTEND:${toIcsDateTime(endDateTime)}`,
+        `SUMMARY:${escapeIcsText(title)}`,
+        `LOCATION:${escapeIcsText(location)}`,
+        `DESCRIPTION:${escapeIcsText(description)}`,
+        'END:VEVENT',
+        'END:VCALENDAR'
+    ].join('\r\n');
+}
+
+function downloadIcsFile(icsContent, fileName) {
+    const blob = new Blob([icsContent], { type: 'text/calendar;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = fileName;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
+}
+
 function initCalendarButtons() {
     document.querySelectorAll('.day-schedule').forEach(section => {
         const dateStr = dayDateMap[section.id];
@@ -159,21 +212,47 @@ function initCalendarButtons() {
             const locEl    = event.querySelector('.event-location span:last-child, .event-location a');
             const location = locEl ? locEl.textContent.trim() : 'Cukrownia Żnin';
 
-            const start = times[0].replace(/[-:]/g, '');
-            const end   = times[1].replace(/[-:]/g, '');
+            const start = toCalendarStamp(times[0]);
+            const end   = toCalendarStamp(times[1]);
             const title = 'ZLOT DURANGO 2026 – ' + titleEl.textContent.trim();
+            const details = 'Cukrownia Żnin • VII Zlot Durango 2026';
             const url   = 'https://calendar.google.com/calendar/render?action=TEMPLATE'
                 + '&text='     + encodeURIComponent(title)
                 + '&dates='    + start + '/' + end
                 + '&location=' + encodeURIComponent(location)
-                + '&details='  + encodeURIComponent('Cukrownia Żnin • VII Zlot Durango 2026');
+                + '&details='  + encodeURIComponent(details);
 
-            const btn = document.createElement('button');
-            btn.className = 'cal-btn';
-            btn.setAttribute('aria-label', 'Dodaj do kalendarza');
-            btn.textContent = '📅 Dodaj do kalendarza';
-            btn.addEventListener('click', () => window.open(url, '_blank'));
-            contentEl.appendChild(btn);
+            const btnWrap = document.createElement('div');
+            btnWrap.className = 'cal-btn-group';
+
+            const googleBtn = document.createElement('button');
+            googleBtn.className = 'cal-btn';
+            googleBtn.setAttribute('aria-label', 'Dodaj do kalendarza Google');
+            googleBtn.textContent = '📅 Google';
+            googleBtn.addEventListener('click', () => window.open(url, '_blank'));
+
+            const appleBtn = document.createElement('button');
+            appleBtn.className = 'cal-btn cal-btn-apple';
+            appleBtn.setAttribute('aria-label', 'Dodaj do kalendarza iPhone');
+            appleBtn.textContent = ' iPhone';
+            appleBtn.addEventListener('click', () => {
+                const ics = buildIcsEvent({
+                    title,
+                    location,
+                    description: details,
+                    startDateTime: times[0],
+                    endDateTime: times[1]
+                });
+                const fileName = title
+                    .toLowerCase()
+                    .replace(/[^a-z0-9]+/g, '-')
+                    .replace(/^-+|-+$/g, '') + '.ics';
+                downloadIcsFile(ics, fileName);
+            });
+
+            btnWrap.appendChild(googleBtn);
+            btnWrap.appendChild(appleBtn);
+            contentEl.appendChild(btnWrap);
         });
     });
 }
