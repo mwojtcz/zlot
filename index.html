@@ -12,8 +12,9 @@
 <body>
     <header class="hero">
         <div class="hero-content">
-            <h1>ZLOT DURANGO 2026</h1>
-            <p class="subtitle">Cukrownia Żnin • 4-7 czerwca 2026</p>
+            <h1>VII ZLOT DURANGO 2026</h1>
+            <p class="subtitle">VII Ogólnopolski Zlot Grupy Dodge Durango Polska</p>
+            <p class="subtitle">Cukrownia Żnin • 3-7 czerwca 2026</p>
             <div class="countdown" id="countdown">
                 <div class="countdown-item">
                     <span class="countdown-number" id="days">--</span>
@@ -36,6 +37,10 @@
     </header>
 
     <nav class="day-nav">
+        <button class="day-btn" data-day="wednesday">
+            <span class="day-name">Środa</span>
+            <span class="day-date">03.06</span>
+        </button>
         <button class="day-btn active" data-day="thursday">
             <span class="day-name">Czwartek</span>
             <span class="day-date">04.06</span>
@@ -52,29 +57,120 @@
             <span class="day-name">Niedziela</span>
             <span class="day-date">07.06</span>
         </button>
+        <button class="day-btn" data-day="cukrownia">
+            <span class="day-name">🏭 Cukrownia</span>
+            <span class="day-date">Atrakcje</span>
+        </button>
     </nav>
 
     <main class="schedule-container">
         
+        <!-- ŚRODA -->
+        <section class="day-schedule" id="wednesday">
+            <div class="day-header">
+                <h2>🏖️ Środa, 3 czerwca 2026</h2>
+                <p class="day-theme">Długi Weekend Czerwcowy - Dzień dla wczesnych przyjazdów</p>
+            </div>
+            
+            <div class="timeline">
+                <div class="event">
+                    <div class="event-time">
+                        <span class="time">17:00 - 21:00</span>
+                    </div>
+                    <div class="event-content food">
+                        <div class="event-icon">🔥</div>
+                        <h3>Ognisko z kiełbaskami</h3>
+                        <p>Pierwsze spotkanie przy ognisku dla osób z pakietem Długi Weekend.</p>
+                        <p class="event-note">💰 Kiełbaski dodatkowo płatne (zestaw 18 zł) do kupienia w browarze</p>
+                        <div class="event-location">
+                            <span class="location-icon">📍</span>
+                            <span>Miejsce przy Browarze</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event">
+                    <div class="event-time">
+                        <span class="time">19:30</span>
+                    </div>
+                    <div class="event-content chill">
+                        <div class="event-icon">🎬</div>
+                        <h3>Seans kinowy - Pan Popper i jego pingwiny</h3>
+                        <p>Projekcja filmowa dla całej rodziny.</p>
+                        <div class="event-location">
+                            <span class="location-icon">📍</span>
+                            <span>BURAKINO</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- CZWARTEK -->
         <section class="day-schedule active" id="thursday">
             <div class="day-header">
                 <h2>🚗 Czwartek, 4 czerwca 2026</h2>
-                <p class="day-theme">Dzień Przyjazdu</p>
+                <p class="day-theme">Dzień Przyjazdu i Koncert</p>
             </div>
             
             <div class="timeline">
+                <div class="event">
+                    <div class="event-time">
+                        <span class="time">11:00</span>
+                    </div>
+                    <div class="event-content chill">
+                        <div class="event-icon">🎬</div>
+                        <h3>Seans kinowy - Merida Waleczna</h3>
+                        <p>Film dla dzieci i całej rodziny.</p>
+                        <div class="event-location">
+                            <span class="location-icon">📍</span>
+                            <span>BURAKINO</span>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="event">
                     <div class="event-time">
                         <span class="time">Od 14:00</span>
                     </div>
                     <div class="event-content arrival">
                         <div class="event-icon">🏨</div>
-                        <h3>Przyjazd i zakwaterowanie</h3>
+                        <h3>Przyjazd i zakwaterowanie - START ZLOTU</h3>
                         <p>Zameldowanie w Cukrowni Żnin. Dedykowany parking zlotowy na uboczu kompleksu - spokój i możliwość integracji bez ograniczeń.</p>
                         <div class="event-location">
                             <span class="location-icon">📍</span>
                             <span>Cukrownia Żnin</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event">
+                    <div class="event-time">
+                        <span class="time">14:00</span>
+                    </div>
+                    <div class="event-content chill">
+                        <div class="event-icon">🎬</div>
+                        <h3>Seans kinowy - Co w duszy gra</h3>
+                        <p>Film animowany dla całej rodziny.</p>
+                        <div class="event-location">
+                            <span class="location-icon">📍</span>
+                            <span>BURAKINO</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event">
+                    <div class="event-time">
+                        <span class="time">18:00 - 21:00</span>
+                    </div>
+                    <div class="event-content food">
+                        <div class="event-icon">🔥</div>
+                        <h3>Ognisko z kiełbaskami</h3>
+                        <p>Spotkanie przy ognisku przed koncertem.</p>
+                        <p class="event-note">💰 Kiełbaski dodatkowo płatne (zestaw 18 zł) do kupienia w browarze</p>
+                        <div class="event-location">
+                            <span class="location-icon">📍</span>
+                            <span>Miejsce przy Browarze</span>
                         </div>
                     </div>
                 </div>
@@ -87,9 +183,26 @@
                         <div class="event-icon">🎧</div>
                         <h3>Before Party - DJ Mikesz</h3>
                         <p>Rozgrzewka przed koncertem na plaży.</p>
+                        <p class="event-note">🎫 Wydarzenie biletowane</p>
                         <div class="event-location">
                             <span class="location-icon">📍</span>
                             <span>Plaża</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event">
+                    <div class="event-time">
+                        <span class="time">18:00 - 22:00</span>
+                    </div>
+                    <div class="event-content chill">
+                        <div class="event-icon">🧖</div>
+                        <h3>Wieczorne seanse saunowe</h3>
+                        <p>Dostępne godziny: 18:00, 18:30, 19:30, 20:00</p>
+                        <p class="event-note">⚠️ Liczba miejsc ograniczona, decyduje kolejność przybycia</p>
+                        <div class="event-location">
+                            <span class="location-icon">📍</span>
+                            <span>Basen</span>
                         </div>
                     </div>
                 </div>
@@ -109,7 +222,7 @@
                         <p class="event-price">💰 Bilet: <strong>119 PLN</strong></p>
                         <div class="event-location">
                             <span class="location-icon">📍</span>
-                            <span>Koncert plenerowy</span>
+                            <span>Plaża - Koncert plenerowy</span>
                         </div>
                     </div>
                 </div>
@@ -120,8 +233,8 @@
                     </div>
                     <div class="event-content party">
                         <div class="event-icon">🎉</div>
-                        <h3>After Party</h3>
-                        <p>Kontynuacja imprezy po koncercie!</p>
+                        <h3>After Party - DJ Mikesz</h3>
+                        <p>Kontynuacja imprezy po koncercie! Wstęp wolny.</p>
                         <div class="event-location">
                             <span class="location-icon">📍</span>
                             <span>Wirownia</span>
@@ -139,6 +252,53 @@
             </div>
             
             <div class="timeline">
+                <div class="event">
+                    <div class="event-time">
+                        <span class="time">09:30</span>
+                    </div>
+                    <div class="event-content chill">
+                        <div class="event-icon">🎬</div>
+                        <h3>Seans kinowy - Mój przyjaciel smok</h3>
+                        <p>Film dla dzieci.</p>
+                        <div class="event-location">
+                            <span class="location-icon">📍</span>
+                            <span>BURAKINO - wejście od zewnątrz</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event">
+                    <div class="event-time">
+                        <span class="time">11:00</span>
+                    </div>
+                    <div class="event-content chill">
+                        <div class="event-icon">🎨</div>
+                        <h3>Warsztaty ceramiczne dla dzieci - Ulep Swoją Miskę</h3>
+                        <p>Kreatywne warsztaty dla najmłodszych.</p>
+                        <p class="event-note">⚠️ Liczba miejsc ograniczona, obowiązują zapisy w recepcji. 35 zł/zajęcia (darmowe dla pakietu Długi Weekend)</p>
+                        <div class="event-location">
+                            <span class="location-icon">📍</span>
+                            <span>Akademia Cukru</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event">
+                    <div class="event-time">
+                        <span class="time">12:00</span>
+                    </div>
+                    <div class="event-content chill">
+                        <div class="event-icon">🎨</div>
+                        <h3>Warsztaty ceramiczne dla dzieci - Ulep Swoją Miskę</h3>
+                        <p>Druga tura warsztatów ceramicznych.</p>
+                        <p class="event-note">⚠️ Liczba miejsc ograniczona, obowiązują zapisy w recepcji</p>
+                        <div class="event-location">
+                            <span class="location-icon">📍</span>
+                            <span>Akademia Cukru</span>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="event highlight">
                     <div class="event-time">
                         <span class="time">12:05</span>
@@ -169,6 +329,36 @@
 
                 <div class="event">
                     <div class="event-time">
+                        <span class="time">14:00 - 18:00</span>
+                    </div>
+                    <div class="event-content chill">
+                        <div class="event-icon">🎈</div>
+                        <h3>Dmuchańce dla dzieci</h3>
+                        <p>Plac zabaw dla najmłodszych.</p>
+                        <div class="event-location">
+                            <span class="location-icon">📍</span>
+                            <span>Przy Barze Wirownia</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event">
+                    <div class="event-time">
+                        <span class="time">14:00 - 15:00</span>
+                    </div>
+                    <div class="event-content chill">
+                        <div class="event-icon">💦</div>
+                        <h3>Piana Party</h3>
+                        <p>Zabawa w pianie dla dzieci.</p>
+                        <div class="event-location">
+                            <span class="location-icon">📍</span>
+                            <span>Przy Barze Wirownia</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event">
+                    <div class="event-time">
                         <span class="time">15:55</span>
                     </div>
                     <div class="event-content train">
@@ -186,6 +376,98 @@
                         <div class="event-icon">✅</div>
                         <h3>Powrót do Żnina</h3>
                         <p>Przyjazd na stację w Żninie.</p>
+                    </div>
+                </div>
+
+                <div class="event">
+                    <div class="event-time">
+                        <span class="time">17:00</span>
+                    </div>
+                    <div class="event-content chill">
+                        <div class="event-icon">🌍</div>
+                        <h3>Moja Afryka - Event z Masajem</h3>
+                        <p>Konkursy i zabawy z afrykańskim klimatem. Wstęp wolny.</p>
+                        <div class="event-location">
+                            <span class="location-icon">📍</span>
+                            <span>Plaża</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event">
+                    <div class="event-time">
+                        <span class="time">18:00</span>
+                    </div>
+                    <div class="event-content chill">
+                        <div class="event-icon">🚶</div>
+                        <h3>Oprowadzanie po obiekcie z przewodnikiem</h3>
+                        <p>Zwiedzanie kompleksu Cukrowni.</p>
+                        <div class="event-location">
+                            <span class="location-icon">📍</span>
+                            <span>Zbiórka przy recepcji</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event">
+                    <div class="event-time">
+                        <span class="time">18:00 - 21:00</span>
+                    </div>
+                    <div class="event-content food">
+                        <div class="event-icon">🔥</div>
+                        <h3>Ognisko z kiełbaskami</h3>
+                        <p>Spotkanie przy ognisku.</p>
+                        <p class="event-note">💰 Kiełbaski dodatkowo płatne (zestaw 18 zł) do kupienia w browarze</p>
+                        <div class="event-location">
+                            <span class="location-icon">📍</span>
+                            <span>Przy Browarze Stacja Filtracja</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event">
+                    <div class="event-time">
+                        <span class="time">18:30</span>
+                    </div>
+                    <div class="event-content chill">
+                        <div class="event-icon">🌍</div>
+                        <h3>Moja Afryka - Prelekcja z Masajem</h3>
+                        <p>Opowieści o Afryce. Wstęp wolny.</p>
+                        <div class="event-location">
+                            <span class="location-icon">📍</span>
+                            <span>Magazyn Wysłodków</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event">
+                    <div class="event-time">
+                        <span class="time">18:00 - 20:00</span>
+                    </div>
+                    <div class="event-content chill">
+                        <div class="event-icon">🧖</div>
+                        <h3>Wieczorne seanse saunowe</h3>
+                        <p>Dostępne godziny: 18:00, 18:30, 19:30, 20:00</p>
+                        <p class="event-note">⚠️ Liczba miejsc ograniczona, decyduje kolejność przybycia</p>
+                        <div class="event-location">
+                            <span class="location-icon">📍</span>
+                            <span>Basen</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event">
+                    <div class="event-time">
+                        <span class="time">19:30</span>
+                    </div>
+                    <div class="event-content chill">
+                        <div class="event-icon">🎬</div>
+                        <h3>Seans kinowy - Nieznajomi</h3>
+                        <p>Film dla dorosłych.</p>
+                        <div class="event-location">
+                            <span class="location-icon">📍</span>
+                            <span>BURAKINO - wejście od zewnątrz</span>
+                        </div>
                     </div>
                 </div>
 
@@ -225,6 +507,21 @@
             <div class="timeline">
                 <div class="event">
                     <div class="event-time">
+                        <span class="time">09:30</span>
+                    </div>
+                    <div class="event-content chill">
+                        <div class="event-icon">🎬</div>
+                        <h3>Seans kinowy - Mrówka Z</h3>
+                        <p>Film dla dzieci.</p>
+                        <div class="event-location">
+                            <span class="location-icon">📍</span>
+                            <span>BURAKINO - wejście od zewnątrz</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event">
+                    <div class="event-time">
                         <span class="time">Od rana</span>
                     </div>
                     <div class="event-content">
@@ -232,6 +529,37 @@
                         <h3>Wydawanie pakietów</h3>
                         <p>Odbiór pakietów zlotowych + wpłaty last minute.</p>
                         <p class="event-note">⚡ Priorytet dla osób z przelewem na konto.</p>
+                    </div>
+                </div>
+
+                <div class="event">
+                    <div class="event-time">
+                        <span class="time">10:00 - 14:00</span>
+                    </div>
+                    <div class="event-content competition">
+                        <div class="event-icon">🏍️</div>
+                        <h3>Mistrzostwa Polski Pojazdów Zabytkowych - kategoria motocykle</h3>
+                        <p>Pokaz i mistrzostwa zabytkowych motocykli.</p>
+                        <div class="event-location">
+                            <span class="location-icon">📍</span>
+                            <span>Budynek Ż</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event">
+                    <div class="event-time">
+                        <span class="time">10:00 - 12:00</span>
+                    </div>
+                    <div class="event-content chill">
+                        <div class="event-icon">🧖</div>
+                        <h3>Poranne seanse saunowe</h3>
+                        <p>Dostępne godziny: 10:00, 10:30, 11:30, 12:00</p>
+                        <p class="event-note">⚠️ Liczba miejsc ograniczona, decyduje kolejność przybycia</p>
+                        <div class="event-location">
+                            <span class="location-icon">📍</span>
+                            <span>Basen</span>
+                        </div>
                     </div>
                 </div>
 
@@ -243,11 +571,28 @@
                         <div class="event-icon">🚗</div>
                         <h3>Wyjazd do Silverado City</h3>
                         <p>Przejazd przez Żnin (jeśli zgoda) do miasteczka westernowego. Rundka po mieście!</p>
+                        <p class="event-note">⚠️ W SOBOTĘ DO 11:00 JESTEŚMY NA OBIEKCIE. Potem jedziemy do Silverado City i ok. 15:00 wracamy na parking do Cukrowni. Bawimy się do rana.</p>
                         <div class="event-location">
                             <span class="location-icon">📍</span>
                             <a href="https://maps.app.goo.gl/bkPhRGz8p9iNkKqL8" target="_blank">Silverado City</a>
                         </div>
                         <p class="event-note">Parkujemy na środku - jak w 2023 roku.</p>
+                    </div>
+                </div>
+
+                <div class="event">
+                    <div class="event-time">
+                        <span class="time">11:00</span>
+                    </div>
+                    <div class="event-content chill">
+                        <div class="event-icon">🍕</div>
+                        <h3>Warsztaty z robienia pizzy</h3>
+                        <p>Naucz się robić prawdziwą włoską pizzę!</p>
+                        <p class="event-note">⚠️ Liczba miejsc ograniczona, obowiązują zapisy w recepcji. 35 zł/zajęcia (darmowe dla pakietu Długi Weekend)</p>
+                        <div class="event-location">
+                            <span class="location-icon">📍</span>
+                            <span>Akademia Cukru</span>
+                        </div>
                     </div>
                 </div>
 
@@ -281,12 +626,75 @@
 
                 <div class="event">
                     <div class="event-time">
+                        <span class="time">12:30</span>
+                    </div>
+                    <div class="event-content chill">
+                        <div class="event-icon">🍕</div>
+                        <h3>Warsztaty z robienia pizzy</h3>
+                        <p>Druga tura warsztatów kulinarnych.</p>
+                        <p class="event-note">⚠️ Liczba miejsc ograniczona, obowiązują zapisy w recepcji</p>
+                        <div class="event-location">
+                            <span class="location-icon">📍</span>
+                            <span>Akademia Cukru</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event">
+                    <div class="event-time">
+                        <span class="time">14:00</span>
+                    </div>
+                    <div class="event-content chill">
+                        <div class="event-icon">🍬</div>
+                        <h3>Warsztaty z robienia cukierków</h3>
+                        <p>Poznaj tajniki produkcji cukierków.</p>
+                        <p class="event-note">⚠️ Liczba miejsc ograniczona, obowiązują zapisy w recepcji. 35 zł/zajęcia (darmowe dla pakietu Długi Weekend)</p>
+                        <div class="event-location">
+                            <span class="location-icon">📍</span>
+                            <span>Akademia Cukru</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event">
+                    <div class="event-time">
+                        <span class="time">14:00 - 18:00</span>
+                    </div>
+                    <div class="event-content chill">
+                        <div class="event-icon">🎈</div>
+                        <h3>Dmuchańce dla dzieci</h3>
+                        <p>Plac zabaw dla najmłodszych.</p>
+                        <div class="event-location">
+                            <span class="location-icon">📍</span>
+                            <span>Przy Barze Wirownia</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event">
+                    <div class="event-time">
                         <span class="time">14:30 - 15:00</span>
                     </div>
                     <div class="event-content">
                         <div class="event-icon">🔙</div>
                         <h3>Powrót do Żnina</h3>
                         <p>Parkujemy na dolnym parkingu (po zlotowiczach skuterowych którzy wyjeżdżają przed 15:00).</p>
+                    </div>
+                </div>
+
+                <div class="event">
+                    <div class="event-time">
+                        <span class="time">15:00</span>
+                    </div>
+                    <div class="event-content chill">
+                        <div class="event-icon">🍬</div>
+                        <h3>Warsztaty z robienia cukierków</h3>
+                        <p>Druga tura warsztatów cukierniczych.</p>
+                        <p class="event-note">⚠️ Liczba miejsc ograniczona, obowiązują zapisy w recepcji</p>
+                        <div class="event-location">
+                            <span class="location-icon">📍</span>
+                            <span>Akademia Cukru</span>
+                        </div>
                     </div>
                 </div>
 
@@ -301,6 +709,52 @@
                     </div>
                 </div>
 
+                <div class="event">
+                    <div class="event-time">
+                        <span class="time">17:00</span>
+                    </div>
+                    <div class="event-content chill">
+                        <div class="event-icon">🍺</div>
+                        <h3>Warsztaty piwowarskie z degustacją</h3>
+                        <p>Poznaj tajniki warzenia piwa.</p>
+                        <p class="event-note">⚠️ Liczba miejsc ograniczona, obowiązują zapisy w recepcji. 35 zł/zajęcia (darmowe dla pakietu Długi Weekend)</p>
+                        <div class="event-location">
+                            <span class="location-icon">📍</span>
+                            <span>Browar Stacja Filtracja</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event">
+                    <div class="event-time">
+                        <span class="time">17:00 - 19:00</span>
+                    </div>
+                    <div class="event-content chill">
+                        <div class="event-icon">🎮</div>
+                        <h3>Animacje dla dzieci</h3>
+                        <p>Gry zespołowe, zabawy zręcznościowe i sportowe.</p>
+                        <div class="event-location">
+                            <span class="location-icon">📍</span>
+                            <span>Stacja Zagęszczania</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event">
+                    <div class="event-time">
+                        <span class="time">18:00</span>
+                    </div>
+                    <div class="event-content chill">
+                        <div class="event-icon">🚶</div>
+                        <h3>Oprowadzanie po obiekcie z przewodnikiem</h3>
+                        <p>Zwiedzanie kompleksu Cukrowni.</p>
+                        <div class="event-location">
+                            <span class="location-icon">📍</span>
+                            <span>Zbiórka przy recepcji</span>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="event highlight">
                     <div class="event-time">
                         <span class="time">18:00 - 20:00</span>
@@ -312,6 +766,22 @@
                         <div class="event-location">
                             <span class="location-icon">📍</span>
                             <span>Restauracja Przepompownia</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event">
+                    <div class="event-time">
+                        <span class="time">18:00 - 21:00</span>
+                    </div>
+                    <div class="event-content food">
+                        <div class="event-icon">🔥</div>
+                        <h3>Ognisko z kiełbaskami</h3>
+                        <p>Spotkanie przy ognisku.</p>
+                        <p class="event-note">💰 Kiełbaski dodatkowo płatne (zestaw 18 zł) do kupienia w browarze</p>
+                        <div class="event-location">
+                            <span class="location-icon">📍</span>
+                            <span>Przy Browarze Stacja Filtracja</span>
                         </div>
                     </div>
                 </div>
@@ -332,6 +802,21 @@
                         <p class="event-note">💒 Ciekawostka: nad jeziorem odbędzie się ślub - może robimy bramę? 🚗</p>
                     </div>
                 </div>
+
+                <div class="event">
+                    <div class="event-time">
+                        <span class="time">20:00</span>
+                    </div>
+                    <div class="event-content party">
+                        <div class="event-icon">🎧</div>
+                        <h3>DJ na kręgielni - słynne hity klubowe</h3>
+                        <p>Muzyka i zabawa na kręgielni.</p>
+                        <div class="event-location">
+                            <span class="location-icon">📍</span>
+                            <span>Wirownia</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -345,6 +830,21 @@
             <div class="timeline">
                 <div class="event">
                     <div class="event-time">
+                        <span class="time">09:30</span>
+                    </div>
+                    <div class="event-content chill">
+                        <div class="event-icon">🎬</div>
+                        <h3>Seans kinowy - Epoka Lodowcowa</h3>
+                        <p>Film animowany dla całej rodziny.</p>
+                        <div class="event-location">
+                            <span class="location-icon">📍</span>
+                            <span>BURAKINO - od zewnątrz</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event">
+                    <div class="event-time">
                         <span class="time">Rano</span>
                     </div>
                     <div class="event-content">
@@ -356,18 +856,208 @@
 
                 <div class="event">
                     <div class="event-time">
+                        <span class="time">11:00 - 15:00</span>
+                    </div>
+                    <div class="event-content chill">
+                        <div class="event-icon">🎈</div>
+                        <h3>Dmuchany plac zabaw dla dzieci</h3>
+                        <p>Ostatnie zabawy przed wyjazdem.</p>
+                        <div class="event-location">
+                            <span class="location-icon">📍</span>
+                            <span>Za Barem Wirownia</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event">
+                    <div class="event-time">
+                        <span class="time">12:00 - 14:00</span>
+                    </div>
+                    <div class="event-content chill">
+                        <div class="event-icon">🎳</div>
+                        <h3>Happy Hours na kręgle</h3>
+                        <p>59 zł zamiast 79 zł</p>
+                        <p class="event-note">📞 Rezerwacja torów pod numerem telefonu 52 506 57 81</p>
+                        <div class="event-location">
+                            <span class="location-icon">📍</span>
+                            <span>Wirownia</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event">
+                    <div class="event-time">
+                        <span class="time">13:00 - 16:00</span>
+                    </div>
+                    <div class="event-content chill">
+                        <div class="event-icon">🎯</div>
+                        <h3>Happy Hours na darta</h3>
+                        <p>15 zł zamiast 30 zł</p>
+                        <p class="event-note">📞 Rezerwacja pod numerem telefonu 52 506 57 81</p>
+                        <div class="event-location">
+                            <span class="location-icon">📍</span>
+                            <span>Wirownia</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event">
+                    <div class="event-time">
                         <span class="time">Do południa</span>
                     </div>
                     <div class="event-content">
                         <div class="event-icon">🚗</div>
                         <h3>Wyjazdy</h3>
                         <p>Do zobaczenia na następnym zlocie!</p>
+                        <p class="event-note">💡 Opcja przedłużenia doby do poniedziałku: 350 zł/pokój dwuosobowy (szczegóły w recepcji)</p>
                     </div>
                 </div>
             </div>
         </section>
 
     </main>
+
+    <!-- CUKROWNIA ATTRACTIONS -->
+    <section class="day-schedule" id="cukrownia">
+        <div class="day-header" style="text-align: center; padding: 40px 20px;">
+            <h2>🏭 Atrakcje Cukrowni Żnin</h2>
+            <p class="day-theme">Dostępne przez cały długi weekend czerwcowy (3-7 czerwca)</p>
+        </div>
+        
+        <div style="max-width: 900px; margin: 0 auto; padding: 0 20px;">
+            <div class="timeline">
+                <div class="event">
+                    <div class="event-time">
+                        <span class="time">📍</span>
+                    </div>
+                    <div class="event-content chill">
+                        <div class="event-icon">🏊</div>
+                        <h3>Basen i SPA</h3>
+                        <p>Nowoczesny kompleks basenowy z saną. Seanse saunowe dostępne o różnych godzinach - liczba miejsc ograniczona, decyduje kolejność przybycia.</p>
+                    </div>
+                </div>
+
+                <div class="event">
+                    <div class="event-time">
+                        <span class="time">📍</span>
+                    </div>
+                    <div class="event-content chill">
+                        <div class="event-icon">🎬</div>
+                        <h3>BURAKINO - Kino</h3>
+                        <p>Regularne seanse filmowe dla dzieci i dorosłych przez cały weekend. Sprawdź harmonogram w poszczególnych dniach.</p>
+                    </div>
+                </div>
+
+                <div class="event">
+                    <div class="event-time">
+                        <span class="time">💰</span>
+                    </div>
+                    <div class="event-content chill">
+                        <div class="event-icon">🎓</div>
+                        <h3>Akademia Cukru - Warsztaty</h3>
+                        <p>Różnorodne warsztaty edukacyjne i rozrywkowe:</p>
+                        <ul class="competition-list">
+                            <li>🎨 Warsztaty ceramiczne - Ulep Swoją Miskę</li>
+                            <li>🍕 Warsztaty z robienia pizzy</li>
+                            <li>🍬 Warsztaty z robienia cukierków</li>
+                        </ul>
+                        <p class="event-note">💰 Wszystkie warsztaty: 35 zł/zajęcia. DARMOWE dla osób z pakietem Długi Weekend Czerwcowy. Zapisy w recepcji - liczba miejsc ograniczona!</p>
+                    </div>
+                </div>
+
+                <div class="event">
+                    <div class="event-time">
+                        <span class="time">💰</span>
+                    </div>
+                    <div class="event-content chill">
+                        <div class="event-icon">🍺</div>
+                        <h3>Browar Stacja Filtracja</h3>
+                        <p>Własny browar z możliwością degustacji i warsztatów piwowarskich. Dodatkowo przy browarze organizowane są ogniska z kiełbaskami (kiełbaski dodatkowo płatne - zestaw 18 zł).</p>
+                    </div>
+                </div>
+
+                <div class="event">
+                    <div class="event-time">
+                        <span class="time">📍</span>
+                    </div>
+                    <div class="event-content chill">
+                        <div class="event-icon">🎳</div>
+                        <h3>Wirownia - Kręgle i Dart</h3>
+                        <p>Bar z kręgielnią i dartami. W niedzielę specjalne happy hours!</p>
+                        <p class="event-note">📞 Rezerwacja: 52 506 57 81</p>
+                    </div>
+                </div>
+
+                <div class="event">
+                    <div class="event-time">
+                        <span class="time">📍</span>
+                    </div>
+                    <div class="event-content chill">
+                        <div class="event-icon">🏖️</div>
+                        <h3>Plaża nad jeziorem</h3>
+                        <p>Piękna plaża nad jeziorem z barem i miejscem do relaksu. Idealne miejsce na wieczorne imprezy i koncerty.</p>
+                    </div>
+                </div>
+
+                <div class="event">
+                    <div class="event-time">
+                        <span class="time">📍</span>
+                    </div>
+                    <div class="event-content chill">
+                        <div class="event-icon">🚴</div>
+                        <h3>Wypożyczalnia rowerów</h3>
+                        <p>Wypożyczalnia dostępna w recepcji Fabryka I.</p>
+                    </div>
+                </div>
+
+                <div class="event">
+                    <div class="event-time">
+                        <span class="time">📍</span>
+                    </div>
+                    <div class="event-content chill">
+                        <div class="event-icon">🚣</div>
+                        <h3>Wypożyczalnia sprzętu wodnego</h3>
+                        <p>Dostępna w weekendy: sobota-niedziela 12:00 - 18:00</p>
+                    </div>
+                </div>
+
+                <div class="event">
+                    <div class="event-time">
+                        <span class="time">📍</span>
+                    </div>
+                    <div class="event-content chill">
+                        <div class="event-icon">🚶</div>
+                        <h3>Oprowadzanie po obiekcie</h3>
+                        <p>Zwiedzanie z przewodnikiem - sprawdź godziny w harmonogramie piątek/sobota. Zbiórka przy recepcji.</p>
+                    </div>
+                </div>
+
+                <div class="event">
+                    <div class="event-time">
+                        <span class="time">🍽️</span>
+                    </div>
+                    <div class="event-content food">
+                        <div class="event-icon">🍴</div>
+                        <h3>Restauracje - Godziny otwarcia (4-7 czerwca)</h3>
+                        <p><strong>Restauracja ADMINISTRACJA:</strong></p>
+                        <ul class="competition-list">
+                            <li>Czwartek: 13:00 - 22:00</li>
+                            <li>Piątek: 13:00 - 22:00</li>
+                            <li>Sobota: 13:00 - 22:00</li>
+                            <li>Niedziela: 13:00 - 20:00</li>
+                        </ul>
+                        <p><strong>Restauracja SACHAROZA:</strong></p>
+                        <ul class="competition-list">
+                            <li>Czwartek: 13:00 - 22:00</li>
+                            <li>Piątek: 13:00 - 22:00</li>
+                            <li>Sobota: 13:00 - 22:00</li>
+                            <li>Niedziela: 13:00 - 21:00</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <section class="gallery-section">
         <h2>📸 Galeria</h2>
@@ -472,7 +1162,7 @@
     </section>
 
     <footer>
-        <p>ZLOT DURANGO 2026 • Cukrownia Żnin • 4-7 czerwca 2026</p>
+        <p>VII ZLOT DURANGO 2026 • Cukrownia Żnin • 3-7 czerwca 2026</p>
         <p class="footer-note">🚗 Do zobaczenia na zlocie! 🤠</p>
     </footer>
 
