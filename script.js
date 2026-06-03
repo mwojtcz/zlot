@@ -235,13 +235,13 @@ function initCalendarButtons() {
             const googleBtn = document.createElement('button');
             googleBtn.className = 'cal-btn';
             googleBtn.setAttribute('aria-label', 'Dodaj do kalendarza Google');
-            googleBtn.textContent = '📅 Google';
+            googleBtn.textContent = '📅 Google Calendar';
             googleBtn.addEventListener('click', () => window.open(url, '_blank'));
 
             const appleBtn = document.createElement('button');
             appleBtn.className = 'cal-btn cal-btn-apple';
             appleBtn.setAttribute('aria-label', 'Dodaj do kalendarza iPhone');
-            appleBtn.textContent = ' iPhone';
+            appleBtn.textContent = '📱 iPhone (.ics)';
             appleBtn.addEventListener('click', () => {
                 const ics = buildIcsEvent({
                     title,
