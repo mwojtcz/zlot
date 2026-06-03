@@ -537,6 +537,12 @@ footer {
     opacity: 0.8;
 }
 
+.visitor-counter {
+    margin-top: 8px;
+    opacity: 0.6;
+    font-size: 0.8rem;
+}
+
 /* ADD TO CALENDAR BUTTON */
 .cal-btn-group {
     display: flex;
