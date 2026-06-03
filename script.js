@@ -162,8 +162,15 @@ function escapeIcsText(value) {
         .replace(/;/g, '\\;');
 }
 
+function generateCalendarUid() {
+    const bytes = new Uint8Array(10);
+    window.crypto.getRandomValues(bytes);
+    const token = Array.from(bytes, b => b.toString(16).padStart(2, '0')).join('');
+    return `${Date.now()}-${token}@zlotdurango`;
+}
+
 function buildIcsEvent({ title, location, description, startDateTime, endDateTime }) {
-    const uid = `${Date.now()}-${Math.random().toString(36).slice(2)}@zlotdurango`;
+    const uid = generateCalendarUid();
     return [
         'BEGIN:VCALENDAR',
         'VERSION:2.0',
