@@ -444,12 +444,10 @@ window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e)
 });
 
 // ==========================================
-// VISIT COUNTER (unique per device, 5-min cooldown)
+// VISIT COUNTER (every page load increments)
 // ==========================================
 
 (function () {
-    const COOLDOWN_MS = 5 * 60 * 1000; // 5 minutes
-    const LS_KEY = 'zlot_last_visit';
     const NAMESPACE = 'zlotdurango2026';
     const KEY = 'visits';
     const API_BASE = 'https://api.countapi.xyz';
@@ -461,22 +459,13 @@ window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e)
         }
     }
 
-    const lastVisit = parseInt(localStorage.getItem(LS_KEY) || '0', 10);
-    const now = Date.now();
-    const shouldIncrement = (now - lastVisit) > COOLDOWN_MS;
-
-    const url = shouldIncrement
-        ? `${API_BASE}/hit/${NAMESPACE}/${KEY}`
-        : `${API_BASE}/get/${NAMESPACE}/${KEY}`;
+    const url = `${API_BASE}/hit/${NAMESPACE}/${KEY}`;
 
     fetch(url)
         .then(r => r.json())
         .then(data => {
             if (data && typeof data.value === 'number') {
                 displayCount(data.value);
-                if (shouldIncrement) {
-                    localStorage.setItem(LS_KEY, String(now));
-                }
             }
         })
         .catch(() => {
