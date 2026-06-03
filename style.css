@@ -162,36 +162,6 @@ body {
     margin-bottom: 30px;
 }
 
-/* COUNTDOWN */
-.countdown {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-.countdown-item {
-    background: rgba(255,255,255,0.1);
-    backdrop-filter: blur(10px);
-    border-radius: 12px;
-    padding: 15px 25px;
-    min-width: 90px;
-    border: 1px solid rgba(255,255,255,0.2);
-}
-
-.countdown-number {
-    display: block;
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 2.5rem;
-    color: var(--gold);
-}
-
-.countdown-label {
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    opacity: 0.8;
-}
-
 /* DAY NAVIGATION */
 .day-nav {
     display: flex;
@@ -573,15 +543,6 @@ footer {
         font-size: 2.5rem;
     }
     
-    .countdown-item {
-        padding: 10px 15px;
-        min-width: 70px;
-    }
-    
-    .countdown-number {
-        font-size: 1.8rem;
-    }
-    
     .day-btn {
         padding: 10px 15px;
         min-width: 80px;
@@ -619,10 +580,6 @@ footer {
     .hero h1 {
         font-size: 2rem;
         letter-spacing: 2px;
-    }
-    
-    .countdown {
-        gap: 10px;
     }
     
     .day-nav {
@@ -825,7 +782,7 @@ footer {
 
 /* PRINT STYLES */
 @media print {
-    .day-nav, .countdown, .info-section, footer {
+    .day-nav, .info-section, footer {
         display: none;
     }
     
