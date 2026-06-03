@@ -90,47 +90,95 @@ if ('serviceWorker' in navigator) {
     });
 }
 
-// Add to Calendar functionality
-function addToCalendar(event) {
-    const events = {
-        train: {
-            title: 'Kolejka Wąskotorowa - ZLOT DURANGO',
-            start: '2026-06-05T12:05:00',
-            end: '2026-06-05T16:50:00',
-            location: 'Żnin, ul. Potockiego',
-            description: 'Rezerwacja na hasło "Durango"'
-        },
-        silverado: {
-            title: 'Silverado City - ZLOT DURANGO',
-            start: '2026-06-06T11:00:00',
-            end: '2026-06-06T15:00:00',
-            location: 'Silverado City',
-            description: 'Konkursy i pokazy kowbojskie'
-        },
-        concert: {
-            title: 'Koncert O.S.T.R. & Eldo - ZLOT DURANGO',
-            start: '2026-06-04T20:00:00',
-            end: '2026-06-04T23:00:00',
-            location: 'Cukrownia Żnin - Plaża',
-            description: 'Bilet: 119 PLN'
-        },
-        gala: {
-            title: 'Gala nad jeziorem - ZLOT DURANGO',
-            start: '2026-06-06T20:00:00',
-            end: '2026-06-06T23:59:00',
-            location: 'Cukrownia Żnin - Bar na plaży',
-            description: 'Rozdanie nagród + 2 kegi piwa'
-        }
-    };
-    
-    const eventData = events[event];
-    if (!eventData) return;
-    
-    // Create Google Calendar URL
-    const googleCalUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(eventData.title)}&dates=${eventData.start.replace(/[-:]/g, '')}/${eventData.end.replace(/[-:]/g, '')}&location=${encodeURIComponent(eventData.location)}&details=${encodeURIComponent(eventData.description)}`;
-    
-    window.open(googleCalUrl, '_blank');
+// ==========================================
+// ADD TO CALENDAR - Every Event
+// ==========================================
+
+const dayDateMap = {
+    wednesday: '2026-06-03',
+    thursday:  '2026-06-04',
+    friday:    '2026-06-05',
+    saturday:  '2026-06-06',
+    sunday:    '2026-06-07'
+};
+
+const fuzzyTimes = {
+    'Rano':        ['08:00', '10:00'],
+    'Od rana':     ['09:00', '12:00'],
+    'Popołudnie':  ['15:00', '17:00'],
+    'Wieczór':     ['20:00', '22:00'],
+    'Do południa': ['10:00', '12:00']
+};
+
+function parseCalTimes(rawTime, dateStr) {
+    const t = rawTime.trim();
+
+    if (fuzzyTimes[t]) {
+        const [s, e] = fuzzyTimes[t];
+        return [dateStr + 'T' + s + ':00', dateStr + 'T' + e + ':00'];
+    }
+
+    // "HH:MM - HH:MM" or "HH:MM–HH:MM"
+    const range = t.match(/(\d{1,2}:\d{2})\s*[-–]\s*(\d{1,2}:\d{2})/);
+    if (range) {
+        return [
+            dateStr + 'T' + range[1].padStart(5, '0') + ':00',
+            dateStr + 'T' + range[2].padStart(5, '0') + ':00'
+        ];
+    }
+
+    // Single time (possibly prefixed with "Od " etc.)
+    const single = t.match(/(\d{1,2}:\d{2})/);
+    if (single) {
+        const [h, m] = single[1].split(':').map(Number);
+        const endH = String((h + 1) % 24).padStart(2, '0');
+        const mm = String(m).padStart(2, '0');
+        return [
+            dateStr + 'T' + String(h).padStart(2, '0') + ':' + mm + ':00',
+            dateStr + 'T' + endH + ':' + mm + ':00'
+        ];
+    }
+
+    return null;
 }
+
+function initCalendarButtons() {
+    document.querySelectorAll('.day-schedule').forEach(section => {
+        const dateStr = dayDateMap[section.id];
+        if (!dateStr) return; // skip non-day sections (e.g. cukrownia)
+
+        section.querySelectorAll('.event').forEach(event => {
+            const timeEl    = event.querySelector('.event-time .time');
+            const titleEl   = event.querySelector('.event-content h3');
+            const contentEl = event.querySelector('.event-content');
+            if (!timeEl || !titleEl || !contentEl) return;
+
+            const times = parseCalTimes(timeEl.textContent, dateStr);
+            if (!times) return;
+
+            const locEl    = event.querySelector('.event-location span:last-child, .event-location a');
+            const location = locEl ? locEl.textContent.trim() : 'Cukrownia Żnin';
+
+            const start = times[0].replace(/[-:]/g, '');
+            const end   = times[1].replace(/[-:]/g, '');
+            const title = 'ZLOT DURANGO 2026 – ' + titleEl.textContent.trim();
+            const url   = 'https://calendar.google.com/calendar/render?action=TEMPLATE'
+                + '&text='     + encodeURIComponent(title)
+                + '&dates='    + start + '/' + end
+                + '&location=' + encodeURIComponent(location)
+                + '&details='  + encodeURIComponent('Cukrownia Żnin • VII Zlot Durango 2026');
+
+            const btn = document.createElement('button');
+            btn.className = 'cal-btn';
+            btn.setAttribute('aria-label', 'Dodaj do kalendarza');
+            btn.textContent = '📅 Dodaj do kalendarza';
+            btn.addEventListener('click', () => window.open(url, '_blank'));
+            contentEl.appendChild(btn);
+        });
+    });
+}
+
+initCalendarButtons();
 
 // Console Easter Egg
 console.log(`

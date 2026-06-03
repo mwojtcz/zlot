@@ -537,6 +537,29 @@ footer {
     opacity: 0.8;
 }
 
+/* ADD TO CALENDAR BUTTON */
+.cal-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 14px;
+    padding: 8px 14px;
+    background: transparent;
+    border: 1.5px solid var(--primary);
+    border-radius: 20px;
+    color: var(--primary);
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease;
+    line-height: 1;
+}
+
+.cal-btn:hover {
+    background: var(--primary);
+    color: #fff;
+}
+
 /* RESPONSIVE */
 @media (max-width: 768px) {
     .hero h1 {
