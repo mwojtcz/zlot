@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZLOT DURANGO 2026 - Harmonogram</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="hero">
+        <div class="hero-content">
+            <h1>ZLOT DURANGO 2026</h1>
+            <p class="subtitle">Cukrownia Żnin • 4-7 czerwca 2026</p>
+            <div class="countdown" id="countdown">
+                <div class="countdown-item">
+                    <span class="countdown-number" id="days">--</span>
+                    <span class="countdown-label">dni</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="hours">--</span>
+                    <span class="countdown-label">godzin</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="minutes">--</span>
+                    <span class="countdown-label">minut</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="seconds">--</span>
+                    <span class="countdown-label">sekund</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="day-nav">
+        <button class="day-btn active" data-day="thursday">
+            <span class="day-name">Czwartek</span>
+            <span class="day-date">04.06</span>
+        </button>
+        <button class="day-btn" data-day="friday">
+            <span class="day-name">Piątek</span>
+            <span class="day-date">05.06</span>
+        </button>
+        <button class="day-btn" data-day="saturday">
+            <span class="day-name">Sobota</span>
+            <span class="day-date">06.06</span>
+        </button>
+        <button class="day-btn" data-day="sunday">
+            <span class="day-name">Niedziela</span>
+            <span class="day-date">07.06</span>
+        </button>
+    </nav>
+
+    <main class="schedule-container">
+        
+        <!-- CZWARTEK -->
+        <section class="day-schedule active" id="thursday">
+            <div class="day-header">
+                <h2>🚗 Czwartek, 4 czerwca 2026</h2>
+                <p class="day-theme">Dzień Przyjazdu</p>
+            </div>
+            
+            <div class="timeline">
+                <div class="event">
+                    <div class="event-time">
+                        <span class="time">Od 14:00</span>
+                    </div>
+                    <div class="event-content arrival">
+                        <div class="event-icon">🏨</div>
+                        <h3>Przyjazd i zakwaterowanie</h3>
+                        <p>Zameldowanie w Cukrowni Żnin. Dedykowany parking zlotowy na uboczu kompleksu - spokój i możliwość integracji bez ograniczeń.</p>
+                        <div class="event-location">
+                            <span class="location-icon">📍</span>
+                            <span>Cukrownia Żnin</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event">
+                    <div class="event-time">
+                        <span class="time">18:00</span>
+                    </div>
+                    <div class="event-content party">
+                        <div class="event-icon">🎧</div>
+                        <h3>Before Party - DJ Mikesz</h3>
+                        <p>Rozgrzewka przed koncertem na plaży.</p>
+                        <div class="event-location">
+                            <span class="location-icon">📍</span>
+                            <span>Plaża</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event highlight">
+                    <div class="event-time">
+                        <span class="time">20:00</span>
+                    </div>
+                    <div class="event-content concert">
+                        <div class="event-icon">🎤</div>
+                        <h3>Koncert O.S.T.R. & Eldo</h3>
+                        <p>Dwie legendy polskiego rapu na jednej scenie! Długi weekend, plaża i hip-hop w najlepszym wydaniu!</p>
+                        <ul class="concert-artists">
+                            <li>🔥 <strong>O.S.T.R.</strong> – mistrz produkcji i scenicznej energii</li>
+                            <li>🎤 <strong>Eldo</strong> – świadomy przekaz, teksty z głębią</li>
+                        </ul>
+                        <p class="event-price">💰 Bilet: <strong>119 PLN</strong></p>
+                        <div class="event-location">
+                            <span class="location-icon">📍</span>
+                            <span>Koncert plenerowy</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event">
+                    <div class="event-time">
+                        <span class="time">22:00</span>
+                    </div>
+                    <div class="event-content party">
+                        <div class="event-icon">🎉</div>
+                        <h3>After Party</h3>
+                        <p>Kontynuacja imprezy po koncercie!</p>
+                        <div class="event-location">
+                            <span class="location-icon">📍</span>
+                            <span>Wirownia</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PIĄTEK -->
+        <section class="day-schedule" id="friday">
+            <div class="day-header">
+                <h2>🚂 Piątek, 5 czerwca 2026</h2>
+                <p class="day-theme">Kolejka Wąskotorowa & Integracja</p>
+            </div>
+            
+            <div class="timeline">
+                <div class="event highlight">
+                    <div class="event-time">
+                        <span class="time">12:05</span>
+                    </div>
+                    <div class="event-content train">
+                        <div class="event-icon">🚂</div>
+                        <h3>Kolejka Wąskotorowa do Biskupina</h3>
+                        <p>Wiekowa, licząca ponad 120 lat kolejka wąskotorowa. Prędkość ok. 20 km/h pozwala podziwiać pałuckie krajobrazy - pola, pagórki i torfowiska.</p>
+                        <p class="event-note">📋 Rezerwacja na hasło <strong>"Durango"</strong>. Bilety u kierownika pociągu (gotówka/karta).</p>
+                        <div class="event-location">
+                            <span class="location-icon">📍</span>
+                            <a href="https://maps.app.goo.gl/GN3CwbkQ61ARKtAEA" target="_blank">Żnin, ul. Potockiego</a>
+                        </div>
+                        <a href="https://mzp.gminaznin.pl/historia-kolejka/" target="_blank" class="event-link">Więcej o kolejce →</a>
+                    </div>
+                </div>
+
+                <div class="event">
+                    <div class="event-time">
+                        <span class="time">13:05</span>
+                    </div>
+                    <div class="event-content">
+                        <div class="event-icon">🏛️</div>
+                        <h3>Biskupin</h3>
+                        <p>Przyjazd do Biskupina. Czas na zwiedzanie osady i okolicy.</p>
+                    </div>
+                </div>
+
+                <div class="event">
+                    <div class="event-time">
+                        <span class="time">15:55</span>
+                    </div>
+                    <div class="event-content train">
+                        <div class="event-icon">🚂</div>
+                        <h3>Powrót z Biskupina</h3>
+                        <p>Odjazd kolejki w stronę Żnina.</p>
+                    </div>
+                </div>
+
+                <div class="event">
+                    <div class="event-time">
+                        <span class="time">16:50</span>
+                    </div>
+                    <div class="event-content">
+                        <div class="event-icon">✅</div>
+                        <h3>Powrót do Żnina</h3>
+                        <p>Przyjazd na stację w Żninie.</p>
+                    </div>
+                </div>
+
+                <div class="event">
+                    <div class="event-time">
+                        <span class="time">Popołudnie</span>
+                    </div>
+                    <div class="event-content chill">
+                        <div class="event-icon">🏊</div>
+                        <h3>Czas wolny</h3>
+                        <p>Korzystanie z SPA, plaży, basenów. Zameldowanie dla spóźnionych.</p>
+                        <p class="event-note">Parking oznaczony winderami AMCAR Ubezpieczenia. Na miejscu namiot DR Garage z produktami.</p>
+                    </div>
+                </div>
+
+                <div class="event">
+                    <div class="event-time">
+                        <span class="time">Wieczór</span>
+                    </div>
+                    <div class="event-content party">
+                        <div class="event-icon">🎵</div>
+                        <h3>Durango Bar & Integracja</h3>
+                        <p>Na parkingu "Durango Bar". DJ Sylwester Skrzypczak zadba o dobry beat i bass!</p>
+                        <p class="event-note">🍺 Spotkania przy browarze (mini amfiteatr) oraz nad plażą.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SOBOTA -->
+        <section class="day-schedule" id="saturday">
+            <div class="day-header">
+                <h2>🤠 Sobota, 6 czerwca 2026</h2>
+                <p class="day-theme">Silverado City & Gala</p>
+            </div>
+            
+            <div class="timeline">
+                <div class="event">
+                    <div class="event-time">
+                        <span class="time">Od rana</span>
+                    </div>
+                    <div class="event-content">
+                        <div class="event-icon">📦</div>
+                        <h3>Wydawanie pakietów</h3>
+                        <p>Odbiór pakietów zlotowych + wpłaty last minute.</p>
+                        <p class="event-note">⚡ Priorytet dla osób z przelewem na konto.</p>
+                    </div>
+                </div>
+
+                <div class="event highlight">
+                    <div class="event-time">
+                        <span class="time">11:00</span>
+                    </div>
+                    <div class="event-content adventure">
+                        <div class="event-icon">🚗</div>
+                        <h3>Wyjazd do Silverado City</h3>
+                        <p>Przejazd przez Żnin (jeśli zgoda) do miasteczka westernowego. Rundka po mieście!</p>
+                        <div class="event-location">
+                            <span class="location-icon">📍</span>
+                            <a href="https://maps.app.goo.gl/bkPhRGz8p9iNkKqL8" target="_blank">Silverado City</a>
+                        </div>
+                        <p class="event-note">Parkujemy na środku - jak w 2023 roku.</p>
+                    </div>
+                </div>
+
+                <div class="event">
+                    <div class="event-time">
+                        <span class="time">11:00 - 14:30</span>
+                    </div>
+                    <div class="event-content competition">
+                        <div class="event-icon">🏆</div>
+                        <h3>Gry, zabawy & konkursy</h3>
+                        <p>Integracja i rywalizacja w kategoriach:</p>
+                        <ul class="competition-list">
+                            <li>🔊 Najgłośniejsze audio</li>
+                            <li>💨 Najgłośniejszy wydech</li>
+                            <li>✨ Best tuning</li>
+                            <li>🎯 + tajemnicza 8. kategoria</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="event">
+                    <div class="event-time">
+                        <span class="time">12:30</span>
+                    </div>
+                    <div class="event-content">
+                        <div class="event-icon">🤠</div>
+                        <h3>Pokazy kowbojskie</h3>
+                        <p>Specjalne pokazy w klimacie Dzikiego Zachodu.</p>
+                    </div>
+                </div>
+
+                <div class="event">
+                    <div class="event-time">
+                        <span class="time">14:30 - 15:00</span>
+                    </div>
+                    <div class="event-content">
+                        <div class="event-icon">🔙</div>
+                        <h3>Powrót do Żnina</h3>
+                        <p>Parkujemy na dolnym parkingu (po zlotowiczach skuterowych którzy wyjeżdżają przed 15:00).</p>
+                    </div>
+                </div>
+
+                <div class="event">
+                    <div class="event-time">
+                        <span class="time">15:00 - 18:00</span>
+                    </div>
+                    <div class="event-content chill">
+                        <div class="event-icon">😴</div>
+                        <h3>Czas wolny</h3>
+                        <p>Baseny, odpoczynek, regeneracja przed wieczorem.</p>
+                    </div>
+                </div>
+
+                <div class="event highlight">
+                    <div class="event-time">
+                        <span class="time">18:00 - 20:00</span>
+                    </div>
+                    <div class="event-content food">
+                        <div class="event-icon">🍖</div>
+                        <h3>Kolacja grillowa</h3>
+                        <p>Bufet przy dolnym parkingu w obiekcie "Przepompownia". Stąd można pieszo przejść na plażę.</p>
+                        <div class="event-location">
+                            <span class="location-icon">📍</span>
+                            <span>Restauracja Przepompownia</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event highlight">
+                    <div class="event-time">
+                        <span class="time">Od 20:00</span>
+                    </div>
+                    <div class="event-content party">
+                        <div class="event-icon">🎉</div>
+                        <h3>Gala nad jeziorem</h3>
+                        <p>Przenosimy się do baru na plaży!</p>
+                        <ul class="gala-list">
+                            <li>🏆 Rozdanie nagród z konkursów</li>
+                            <li>🍺 2 kegi piwa na koszt zlotu</li>
+                            <li>🌅 Chill out nad wodą</li>
+                        </ul>
+                        <p class="event-note">💒 Ciekawostka: nad jeziorem odbędzie się ślub - może robimy bramę? 🚗</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- NIEDZIELA -->
+        <section class="day-schedule" id="sunday">
+            <div class="day-header">
+                <h2>👋 Niedziela, 7 czerwca 2026</h2>
+                <p class="day-theme">Pożegnanie</p>
+            </div>
+            
+            <div class="timeline">
+                <div class="event">
+                    <div class="event-time">
+                        <span class="time">Rano</span>
+                    </div>
+                    <div class="event-content">
+                        <div class="event-icon">☕</div>
+                        <h3>Śniadanie & wymeldowanie</h3>
+                        <p>Ostatnie wspólne śniadanie. Pożegnania i wymiana kontaktów.</p>
+                    </div>
+                </div>
+
+                <div class="event">
+                    <div class="event-time">
+                        <span class="time">Do południa</span>
+                    </div>
+                    <div class="event-content">
+                        <div class="event-icon">🚗</div>
+                        <h3>Wyjazdy</h3>
+                        <p>Do zobaczenia na następnym zlocie!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <section class="gallery-section">
+        <h2>📸 Galeria</h2>
+        <p class="gallery-subtitle">Kliknij zdjęcie, aby powiększyć</p>
+        <div class="gallery-grid" id="gallery">
+            <div class="gallery-item" data-src="688819716_1548570833941438_6503087646503686990_n.jpg">
+                <img src="688819716_1548570833941438_6503087646503686990_n.jpg" alt="Zlot foto 1" loading="lazy">
+            </div>
+            <div class="gallery-item" data-src="689008334_1548570837274771_2156951917181258562_n.jpg">
+                <img src="689008334_1548570837274771_2156951917181258562_n.jpg" alt="Zlot foto 2" loading="lazy">
+            </div>
+            <div class="gallery-item" data-src="689470878_1548588113939710_8866634226046031766_n.jpg">
+                <img src="689470878_1548588113939710_8866634226046031766_n.jpg" alt="Zlot foto 3" loading="lazy">
+            </div>
+            <div class="gallery-item" data-src="697792606_1557810603017461_4495517201723409131_n.jpg">
+                <img src="697792606_1557810603017461_4495517201723409131_n.jpg" alt="Zlot foto 4" loading="lazy">
+            </div>
+            <div class="gallery-item" data-src="701247076_1559711496160705_4847910846073577448_n.jpg">
+                <img src="701247076_1559711496160705_4847910846073577448_n.jpg" alt="Zlot foto 5" loading="lazy">
+            </div>
+            <div class="gallery-item" data-src="701274434_1558385826293272_8964926110923037256_n.jpg">
+                <img src="701274434_1558385826293272_8964926110923037256_n.jpg" alt="Zlot foto 6" loading="lazy">
+            </div>
+            <div class="gallery-item" data-src="701830966_1561106262687895_6142056829196390239_n.jpg">
+                <img src="701830966_1561106262687895_6142056829196390239_n.jpg" alt="Zlot foto 7" loading="lazy">
+            </div>
+            <div class="gallery-item" data-src="703170418_1562367185895136_3843900625809920804_n.jpg">
+                <img src="703170418_1562367185895136_3843900625809920804_n.jpg" alt="Zlot foto 8" loading="lazy">
+            </div>
+            <div class="gallery-item" data-src="707946571_1571479078317280_8206660480450106640_n.jpg">
+                <img src="707946571_1571479078317280_8206660480450106640_n.jpg" alt="Zlot foto 9" loading="lazy">
+            </div>
+            <div class="gallery-item" data-src="712471722_1575903427874845_6631995106437721868_n.jpg">
+                <img src="712471722_1575903427874845_6631995106437721868_n.jpg" alt="Zlot foto 10" loading="lazy">
+            </div>
+            <div class="gallery-item" data-src="712684123_1576917787773409_2867414306847499745_n.jpg">
+                <img src="712684123_1576917787773409_2867414306847499745_n.jpg" alt="Zlot foto 11" loading="lazy">
+            </div>
+            <div class="gallery-item" data-src="713087162_1576917847773403_7405953533666056978_n.jpg">
+                <img src="713087162_1576917847773403_7405953533666056978_n.jpg" alt="Zlot foto 12" loading="lazy">
+            </div>
+            <div class="gallery-item" data-src="713288875_1576867591111762_4901254659235050827_n.jpg">
+                <img src="713288875_1576867591111762_4901254659235050827_n.jpg" alt="Zlot foto 13" loading="lazy">
+            </div>
+            <div class="gallery-item" data-src="713305796_1576917881106733_4372089582067526323_n.jpg">
+                <img src="713305796_1576917881106733_4372089582067526323_n.jpg" alt="Zlot foto 14" loading="lazy">
+            </div>
+            <div class="gallery-item" data-src="714264671_1576917791106742_8410453328917091811_n.jpg">
+                <img src="714264671_1576917791106742_8410453328917091811_n.jpg" alt="Zlot foto 15" loading="lazy">
+            </div>
+            <div class="gallery-item" data-src="714284821_1576917794440075_2856010924121223613_n.jpg">
+                <img src="714284821_1576917794440075_2856010924121223613_n.jpg" alt="Zlot foto 16" loading="lazy">
+            </div>
+            <div class="gallery-item" data-src="714830966_1576917901106731_2989954787025081603_n.jpg">
+                <img src="714830966_1576917901106731_2989954787025081603_n.jpg" alt="Zlot foto 17" loading="lazy">
+            </div>
+            <div class="gallery-item" data-src="715040779_1576856864446168_34651178017858229_n.jpg">
+                <img src="715040779_1576856864446168_34651178017858229_n.jpg" alt="Zlot foto 18" loading="lazy">
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" id="lightbox-close">&times;</button>
+        <button class="lightbox-nav lightbox-prev" id="lightbox-prev">&#10094;</button>
+        <button class="lightbox-nav lightbox-next" id="lightbox-next">&#10095;</button>
+        <div class="lightbox-content">
+            <img src="" alt="" id="lightbox-img">
+        </div>
+        <div class="lightbox-counter" id="lightbox-counter">1 / 18</div>
+    </div>
+
+    <section class="info-section">
+        <h2>📋 Ważne informacje</h2>
+        <div class="info-grid">
+            <div class="info-card">
+                <div class="info-icon">📍</div>
+                <h3>Lokalizacja</h3>
+                <p><strong>Cukrownia Żnin</strong></p>
+                <p>Kompleks hotelowo-rekreacyjny</p>
+            </div>
+            <div class="info-card">
+                <div class="info-icon">🅿️</div>
+                <h3>Parking</h3>
+                <p>Dedykowany parking na uboczu (czw-sob rano)</p>
+                <p>Dolny parking (sobota po powrocie)</p>
+            </div>
+            <div class="info-card">
+                <div class="info-icon">💬</div>
+                <h3>Kontakt</h3>
+                <p>Grupa WhatsApp:</p>
+                <a href="https://chat.whatsapp.com/KepNAHHG3Kg5ddHLKDpqJE" target="_blank" class="whatsapp-btn">Dołącz do grupy</a>
+            </div>
+            <div class="info-card">
+                <div class="info-icon">🤝</div>
+                <h3>Partnerzy</h3>
+                <p>AMCAR Ubezpieczenia</p>
+                <p>DR Garage</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>ZLOT DURANGO 2026 • Cukrownia Żnin • 4-7 czerwca 2026</p>
+        <p class="footer-note">🚗 Do zobaczenia na zlocie! 🤠</p>
+    </footer>
+
+    <!-- Theme Toggle Button -->
+    <button class="theme-toggle" id="theme-toggle" aria-label="Przełącz tryb ciemny/jasny">
+        <span class="icon-sun">☀️</span>
+        <span class="icon-moon">🌙</span>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
