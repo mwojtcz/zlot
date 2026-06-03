@@ -450,7 +450,7 @@ window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e)
 (function () {
     const NAMESPACE = 'zlotdurango2026';
     const KEY = 'visits';
-    const API_BASE = 'https://api.countapi.xyz';
+    const API_BASE = 'https://api.counterapi.dev/v1';
 
     function displayCount(value) {
         const el = document.getElementById('visit-count');
@@ -459,13 +459,13 @@ window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e)
         }
     }
 
-    const url = `${API_BASE}/hit/${NAMESPACE}/${KEY}`;
+    const url = `${API_BASE}/${NAMESPACE}/${KEY}/up`;
 
     fetch(url)
         .then(r => r.json())
         .then(data => {
-            if (data && typeof data.value === 'number') {
-                displayCount(data.value);
+            if (data && typeof data.count === 'number') {
+                displayCount(data.count);
             }
         })
         .catch(() => {
