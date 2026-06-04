@@ -896,6 +896,10 @@ footer {
         grid-template-columns: repeat(2, 1fr);
         gap: 6px;
     }
+
+    .announcements-gallery {
+        grid-template-columns: 1fr;
+    }
     
     .lightbox-nav {
         padding: 15px 12px;
