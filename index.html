@@ -18,6 +18,10 @@
         </div>
     </header>
 
+    <section class="parking-alert" aria-label="Ważna informacja o parkingu">
+        <p><strong>Parking otwarty.</strong> Wjeżdżając na Cukrownię skręcamy w lewo i cały czas prosto do samego końca.</p>
+    </section>
+
     <nav class="day-nav">
         <button class="day-btn" data-day="wednesday">
             <span class="day-name">Środa</span>
@@ -42,6 +46,14 @@
         <button class="day-btn" data-day="cukrownia">
             <span class="day-name">🏭 Cukrownia</span>
             <span class="day-date">Atrakcje</span>
+        </button>
+        <button class="day-btn" data-day="ogloszenia">
+            <span class="day-name">📢 Ogłoszenia</span>
+            <span class="day-date">Zdjęcia</span>
+        </button>
+        <button class="day-btn" data-day="zlot-zdjecia">
+            <span class="day-name">📸 Zdjęcia ze zlotu</span>
+            <span class="day-date">Nowe</span>
         </button>
     </nav>
 
@@ -1041,10 +1053,10 @@
         </div>
     </section>
 
-    <section class="gallery-section">
-        <h2>📸 Galeria</h2>
+    <section class="day-schedule gallery-section" id="ogloszenia">
+        <h2>📢 Ogłoszenia</h2>
         <p class="gallery-subtitle">Kliknij zdjęcie, aby powiększyć</p>
-        <div class="gallery-grid" id="gallery">
+        <div class="gallery-grid announcements-gallery" id="gallery">
             <div class="gallery-item" data-src="688819716_1548570833941438_6503087646503686990_n.jpg">
                 <img src="688819716_1548570833941438_6503087646503686990_n.jpg" alt="Zlot foto 1" loading="lazy">
             </div>
@@ -1102,6 +1114,25 @@
         </div>
     </section>
 
+    <section class="day-schedule gallery-section" id="zlot-zdjecia">
+        <h2>📸 Zdjęcia ze zlotu</h2>
+        <p class="gallery-subtitle">Nowe zdjęcia z wydarzenia</p>
+        <div class="gallery-grid">
+            <div class="gallery-item" data-src="https://github.com/user-attachments/assets/37adec84-6a93-4886-a074-91a7af7571e1">
+                <img src="https://github.com/user-attachments/assets/37adec84-6a93-4886-a074-91a7af7571e1" alt="Zdjęcie ze zlotu 1" loading="lazy">
+            </div>
+            <div class="gallery-item" data-src="https://github.com/user-attachments/assets/07ca9307-1511-4dab-9d55-5959fc3c7b69">
+                <img src="https://github.com/user-attachments/assets/07ca9307-1511-4dab-9d55-5959fc3c7b69" alt="Zdjęcie ze zlotu 2" loading="lazy">
+            </div>
+            <div class="gallery-item" data-src="https://github.com/user-attachments/assets/d653269f-9e02-4f4b-9107-a09e8f704b1f">
+                <img src="https://github.com/user-attachments/assets/d653269f-9e02-4f4b-9107-a09e8f704b1f" alt="Zdjęcie ze zlotu 3" loading="lazy">
+            </div>
+            <div class="gallery-item" data-src="https://github.com/user-attachments/assets/b0b1ee9a-290b-4994-b8bb-382433c55aaa">
+                <img src="https://github.com/user-attachments/assets/b0b1ee9a-290b-4994-b8bb-382433c55aaa" alt="Zdjęcie ze zlotu 4" loading="lazy">
+            </div>
+        </div>
+    </section>
+
     <!-- Lightbox -->
     <div class="lightbox" id="lightbox">
         <button class="lightbox-close" id="lightbox-close">&times;</button>
@@ -1110,7 +1141,7 @@
         <div class="lightbox-content">
             <img src="" alt="" id="lightbox-img">
         </div>
-        <div class="lightbox-counter" id="lightbox-counter">1 / 18</div>
+        <div class="lightbox-counter" id="lightbox-counter">1 / 22</div>
     </div>
 
     <section class="info-section">
