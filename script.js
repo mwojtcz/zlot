@@ -283,22 +283,118 @@ Do zobaczenia na zlocie!
 const lightbox = document.getElementById('lightbox');
 const lightboxImg = document.getElementById('lightbox-img');
 const lightboxCounter = document.getElementById('lightbox-counter');
-const galleryItems = document.querySelectorAll('.gallery-item');
+const zlotGallery = document.getElementById('zlot-gallery');
 
 let currentIndex = 0;
-const images = Array.from(galleryItems).map(item => item.dataset.src);
+let images = [];
 
-// Open lightbox
-galleryItems.forEach((item, index) => {
-    item.addEventListener('click', () => {
-        currentIndex = index;
-        openLightbox();
+function getGalleryItems() {
+    return Array.from(document.querySelectorAll('.gallery-item[data-src]'));
+}
+
+function syncGalleryImages() {
+    images = getGalleryItems().map(item => item.dataset.src);
+}
+
+function createGalleryMessage(message) {
+    const element = document.createElement('p');
+    element.className = 'gallery-message';
+    element.textContent = message;
+    return element;
+}
+
+function createImageItem(media) {
+    const item = document.createElement('div');
+    item.className = 'gallery-item';
+    item.dataset.src = media.src;
+
+    const image = document.createElement('img');
+    image.src = media.src;
+    image.alt = media.alt || 'Zdjęcie ze zlotu';
+    image.loading = 'lazy';
+
+    item.appendChild(image);
+    return item;
+}
+
+function createVideoItem(media) {
+    const item = document.createElement('div');
+    item.className = 'gallery-item gallery-video';
+
+    const video = document.createElement('video');
+    video.controls = true;
+    video.preload = 'metadata';
+    video.playsInline = true;
+    video.setAttribute('aria-label', media.alt || 'Film ze zlotu');
+
+    const source = document.createElement('source');
+    source.src = media.src;
+    source.type = media.mime || 'video/mp4';
+
+    video.appendChild(source);
+    video.append('Twoja przeglądarka nie obsługuje odtwarzania wideo.');
+    item.appendChild(video);
+
+    return item;
+}
+
+function renderZlotGallery(mediaItems) {
+    if (!zlotGallery) return;
+
+    zlotGallery.replaceChildren();
+
+    if (!Array.isArray(mediaItems) || mediaItems.length === 0) {
+        zlotGallery.appendChild(createGalleryMessage('Brak zdjęć lub filmów w galerii.'));
+        syncGalleryImages();
+        return;
+    }
+
+    mediaItems.forEach((media) => {
+        if (media.type === 'video') {
+            zlotGallery.appendChild(createVideoItem(media));
+            return;
+        }
+
+        zlotGallery.appendChild(createImageItem(media));
     });
-});
 
-function openLightbox() {
+    syncGalleryImages();
+}
+
+async function loadZlotGallery() {
+    if (!zlotGallery) return;
+
+    try {
+        const response = await fetch('galeria-zlot.json', { cache: 'no-cache' });
+
+        if (!response.ok) {
+            throw new Error(`HTTP ${response.status}`);
+        }
+
+        const mediaItems = await response.json();
+        renderZlotGallery(mediaItems);
+    } catch (error) {
+        console.error('Nie udało się załadować galerii zlotu:', error);
+        zlotGallery.replaceChildren(createGalleryMessage('Nie udało się załadować galerii.'));
+        syncGalleryImages();
+    }
+}
+
+function updateLightboxContent() {
+    const galleryItems = getGalleryItems();
+    const activeItem = galleryItems[currentIndex];
+    const activeImage = activeItem ? activeItem.querySelector('img') : null;
+
     lightboxImg.src = images[currentIndex];
+    lightboxImg.alt = activeImage ? activeImage.alt : '';
     lightboxCounter.textContent = `${currentIndex + 1} / ${images.length}`;
+}
+
+function openLightbox(index = currentIndex) {
+    if (!images.length) return;
+
+    currentIndex = index;
+    updateLightboxContent();
     lightbox.classList.add('active');
     document.body.style.overflow = 'hidden';
 }
@@ -309,11 +405,13 @@ function closeLightbox() {
 }
 
 function nextImage() {
+    if (!images.length) return;
     currentIndex = (currentIndex + 1) % images.length;
     updateLightboxImage();
 }
 
 function prevImage() {
+    if (!images.length) return;
     currentIndex = (currentIndex - 1 + images.length) % images.length;
     updateLightboxImage();
 }
@@ -321,11 +419,22 @@ function prevImage() {
 function updateLightboxImage() {
     lightboxImg.style.opacity = '0';
     setTimeout(() => {
-        lightboxImg.src = images[currentIndex];
-        lightboxCounter.textContent = `${currentIndex + 1} / ${images.length}`;
+        updateLightboxContent();
         lightboxImg.style.opacity = '1';
     }, 150);
 }
+
+document.addEventListener('click', (event) => {
+    const galleryItem = event.target.closest('.gallery-item[data-src]');
+    if (!galleryItem) return;
+
+    const galleryItems = getGalleryItems();
+    const selectedIndex = galleryItems.indexOf(galleryItem);
+    if (selectedIndex === -1) return;
+
+    syncGalleryImages();
+    openLightbox(selectedIndex);
+});
 
 // Lightbox controls
 document.getElementById('lightbox-close').addEventListener('click', closeLightbox);
@@ -386,6 +495,8 @@ function handleSwipe() {
 
 // Add smooth transition to lightbox image
 lightboxImg.style.transition = 'opacity 0.15s ease';
+syncGalleryImages();
+loadZlotGallery();
 
 // ==========================================
 // THEME TOGGLE
