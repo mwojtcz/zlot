@@ -876,6 +876,15 @@ footer {
     box-shadow: 0 4px 14px var(--shadow-color);
 }
 
+.zlot-gallery .gallery-message {
+    grid-column: 1 / -1;
+    padding: 24px;
+    border-radius: 12px;
+    background: var(--bg-card);
+    color: var(--text-muted);
+    box-shadow: 0 4px 14px var(--shadow-color);
+}
+
 .zlot-gallery .gallery-item img {
     display: block;
     width: 100%;
