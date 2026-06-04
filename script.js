@@ -283,7 +283,7 @@ Do zobaczenia na zlocie!
 const lightbox = document.getElementById('lightbox');
 const lightboxImg = document.getElementById('lightbox-img');
 const lightboxCounter = document.getElementById('lightbox-counter');
-const galleryItems = document.querySelectorAll('.gallery-item');
+const galleryItems = document.querySelectorAll('.gallery-item[data-src]');
 
 let currentIndex = 0;
 const images = Array.from(galleryItems).map(item => item.dataset.src);
